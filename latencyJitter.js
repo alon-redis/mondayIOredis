@@ -12,7 +12,7 @@ async function redisApplication() {
     console.log('Opening 10 Redis connections...');
     
     // Open 10 connections
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 10; i++) {
       const client = new Redis(redisConfig);
       connections.push(client);
     }
@@ -28,7 +28,7 @@ async function redisApplication() {
     }
 
     console.log('Idling for 30 seconds...');
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Idle for 30 seconds
+    await new Promise((resolve) => setTimeout(resolve, 30000)); // Idle for 30 seconds
 
     console.log('Closing all Redis connections...');
     for (const client of connections) {
