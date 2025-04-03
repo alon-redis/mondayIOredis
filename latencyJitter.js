@@ -11,7 +11,7 @@ async function redisApplication() {
   while (true) {
     console.log('Opening 20 Redis connections...');
     
-    // Open 10 connections
+    // Open 20 connections
     for (let i = 0; i < 20; i++) {
       const client = new Redis(redisConfig);
       connections.push(client);
