@@ -27,8 +27,8 @@ async function redisApplication() {
       }
     }
 
-    console.log('Idling for 5 seconds...');
-    await new Promise((resolve) => setTimeout(resolve, 5000)); // Idle for 30 seconds
+    console.log('Idling for 7 seconds...');
+    await new Promise((resolve) => setTimeout(resolve, 7000)); // Idle for 30 seconds
 
     console.log('Closing all Redis connections...');
     for (const client of connections) {
