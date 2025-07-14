@@ -9,11 +9,10 @@ const genericPool = require('generic-pool');
 const { randomBytes } = require('crypto');
 const { Worker, isMainThread, parentPort, workerData, threadId } = require('worker_threads');
 const { performance } = require('perf_hooks');
-const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers');
+const yargs = require('yargs');
 
 // ----- CLI Parameters ----
-const argv = yargs(hideBin(process.argv))
+const argv = yargs(process.argv.slice(2))
     .usage('Usage: $0 [options]')
     .option('host', { describe: 'Redis host', type: 'string', default: '127.0.0.1' })
     .option('port', { describe: 'Redis port', type: 'number', default: 6379 })
